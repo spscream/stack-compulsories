@@ -2,8 +2,9 @@
   .b-compulsory-title= "#{@compulsory.code}: #{@compulsory.name}"
   .b-compulsory-image= image_tag(@compulsory.image)
   .b-compulsory-description= @compulsory.description
-  ul.b-compulsory-toolbar
-    li.b-compulsory-toolbar-button.mod-destroy
-      = link_to 'Destroy', compulsory_path(@compulsory), method: :delete, class: 'button danger'
-    li.b-compulsory-toolbar-button.mod-edit
-      = link_to 'Edit', edit_compulsory_path(@compulsory), class: 'button'
+  - if policy(@compulsory).edit?
+    ul.b-compulsory-toolbar
+      li.b-compulsory-toolbar-button.mod-destroy
+        = link_to 'Destroy', compulsory_path(@compulsory), method: :delete, class: 'button danger'
+      li.b-compulsory-toolbar-button.mod-edit
+        = link_to 'Edit', edit_compulsory_path(@compulsory), class: 'button'

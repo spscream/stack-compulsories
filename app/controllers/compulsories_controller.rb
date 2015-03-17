@@ -1,6 +1,7 @@
 class CompulsoriesController < ApplicationController
 
     before_action :set_compulsory, except: [:index, :new, :create]
+    before_action :authenticate_user!, except: [:index, :show]
 
     def index
         @compulsories = Compulsory.all
@@ -13,7 +14,8 @@ class CompulsoriesController < ApplicationController
     end
 
     def new
-        respond_with(@compulsory = Compulsory.new)
+        authorize @compulsory = Compulsory.new
+        respond_with(@compulsory)
     end
 
     def create
@@ -39,6 +41,6 @@ class CompulsoriesController < ApplicationController
     end
 
     def set_compulsory
-        @compulsory = Compulsory.find(params[:id])
+        authorize @compulsory = Compulsory.find(params[:id])
     end
 end
