@@ -3,7 +3,9 @@ class CompulsoriesController < ApplicationController
     before_action :set_compulsory, except: [:index, :new, :create]
 
     def index
-        respond_with(@compulsories = Compulsory.all)
+        @compulsories = Compulsory.all
+        @compulsory_disciplines = @compulsories.group_by { |t| t.discipline_i18n }
+        respond_with @compulsories
     end
 
     def show

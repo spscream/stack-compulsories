@@ -1,11 +1,15 @@
 .b-compulsories
   .b-compulsories-toolbar
     = link_to 'New compulsory', new_compulsory_path, class: 'button tiny'
-  ul.b-compulsories-list
-  - @compulsories.each do |compulsory|
-    li.b-compulsories-list-compulsory
-      .b-compulsories-list-compulsory-image
-        =image_tag(compulsory.image)
-      == "#{link_to compulsory.code, compulsory_path(compulsory)}: #{compulsory.name}"
-      = link_to 'Destroy', compulsory_path(compulsory), method: :delete, class: 'button tiny'
-      = link_to 'Edit', edit_compulsory_path(compulsory), class: 'button tiny'
+  .b-compulsories-disciplines
+      - @compulsory_disciplines.each do |discipline, compulsories|
+        .b-compulsories-disciplines-discipline
+          h3.subheader= discipline
+          ul.b-compulsories-list
+            - compulsories.each do |compulsory|
+              li.b-compulsories-list-compulsory
+                == "#{link_to compulsory.code, compulsory_path(compulsory)}: #{compulsory.name}"
+                =image_tag compulsory.image, class: 'b-compulsories-list-compulsory-image'
+                ul.b-compulsories-list-compulsory-actions
+                  = link_to 'Destroy', compulsory_path(compulsory), method: :delete, class: 'b-compulsories-list-compulsory-actions-action button tiny'
+                  = link_to 'Edit', edit_compulsory_path(compulsory), class: 'b-compulsories-list-compulsory-actions-action button tiny'
