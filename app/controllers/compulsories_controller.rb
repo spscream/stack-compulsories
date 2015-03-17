@@ -1,6 +1,6 @@
 class CompulsoriesController < ApplicationController
 
-    before_action :set_compulsory, only: [:show, :destroy]
+    before_action :set_compulsory, except: [:index, :new, :create]
 
     def index
         respond_with(@compulsories = Compulsory.all)
@@ -16,6 +16,15 @@ class CompulsoriesController < ApplicationController
 
     def create
         respond_with(@compulsory = Compulsory.create(compulsory_params))
+    end
+
+    def edit
+        respond_with(@compulsory)
+    end
+
+    def update
+        @compulsory.update(compulsory_params)
+        respond_with(@compulsory)
     end
 
     def destroy
