@@ -26,12 +26,14 @@ feature 'Edit compulsories', %q{
         scenario 'with valid name and code' do
             fill_in 'Name', with: 'New Name'
             fill_in 'Code', with: 'NC01'
+            fill_in 'Description', with: 'Compulsory description'
 
             click_on 'Update Compulsory'
 
             expect(page).to have_content 'Compulsory was successfully updated'
             expect(page).to have_content 'New Name'
             expect(page).to have_content 'NC01'
+            expect(page).to have_content 'Compulsory description'
         end
 
         scenario 'with invalid name and code' do

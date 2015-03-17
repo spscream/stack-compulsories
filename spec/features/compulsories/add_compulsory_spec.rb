@@ -17,6 +17,7 @@ feature 'Add compulsories', %q{
     scenario 'with valid name and code' do
         fill_in 'Name', with: 'Compulsory'
         fill_in 'Code', with: 'DI01'
+        fill_in 'Description', with: 'Compulsory description'
 
         all("input[type='file']")[0].set(image_file)
 
@@ -25,6 +26,7 @@ feature 'Add compulsories', %q{
         expect(page).to have_content 'Compulsory was successfully created.'
         expect(page).to have_content 'Compulsory'
         expect(page).to have_content 'DI01'
+        expect(page).to have_content 'Compulsory description'
         expect(page).to have_xpath '//img[@src="/uploads/compulsory/image/1/image.png"]'
     end
 
