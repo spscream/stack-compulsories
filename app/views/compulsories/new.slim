@@ -1,6 +1,1 @@
-=simple_form_for @compulsory do |f|
-  =f.input :name
-  =f.input :code
-  =f.input :image
-  =f.input :discipline
-  =f.submit class: 'button'
+== render 'compulsory_form', compulsory: @compulsory
