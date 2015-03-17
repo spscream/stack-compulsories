@@ -17,16 +17,16 @@ class CompulsoriesController < ApplicationController
     end
 
     def create
-        respond_with(@compulsory = Compulsory.create(compulsory_params))
+        respond_with(@compulsory = Compulsory.create(compulsory_params), location: -> { compulsories_path })
     end
 
     def edit
-        respond_with(@compulsory)
+        respond_with(@compulsory, location: -> { compulsories_path })
     end
 
     def update
         @compulsory.update(compulsory_params)
-        respond_with(@compulsory)
+        respond_with(@compulsory, location: -> { compulsories_path } )
     end
 
     def destroy

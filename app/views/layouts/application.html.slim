@@ -14,5 +14,7 @@ html
     header
       == render 'layouts/navigation'
     main[role="main"]
-      == render 'layouts/messages'
-      == yield
+      .row
+        .columns.small-12
+          == render 'layouts/messages'
+          == yield
