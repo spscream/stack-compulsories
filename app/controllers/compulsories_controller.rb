@@ -33,7 +33,7 @@ class CompulsoriesController < ApplicationController
 
     private
     def compulsory_params
-        params.require(:compulsory).permit(:code, :name)
+        params.require(:compulsory).permit(:code, :name, :image)
     end
 
     def set_compulsory

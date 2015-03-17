@@ -1,8 +1,11 @@
 .b-compulsories
-  .b-compulsories-toolbar = link_to 'New compulsory', new_compulsory_path, class: 'button tiny'
+  .b-compulsories-toolbar
+    = link_to 'New compulsory', new_compulsory_path, class: 'button tiny'
   ul.b-compulsories-list
   - @compulsories.each do |compulsory|
     li.b-compulsories-list-compulsory
-      = "#{compulsory.code}: #{compulsory.name}"
+      .b-compulsories-list-compulsory-image
+        =image_tag(compulsory.image)
+      == "#{link_to compulsory.code, compulsory_path(compulsory)}: #{compulsory.name}"
       = link_to 'Destroy', compulsory_path(compulsory), method: :delete, class: 'button tiny'
       = link_to 'Edit', edit_compulsory_path(compulsory), class: 'button tiny'
