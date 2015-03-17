@@ -8,8 +8,12 @@ Bundler.require(*Rails.groups)
 
 module StackCompulsories
   class Application < Rails::Application
+    # Use the responders controller from the responders gem
+    config.app_generators.scaffold_controller :responders_controller
+
 
     config.generators do |g|
+      g.template_engine :slim
       g.test_framework :rspec,
         fixtures: true,
         view_specs: false,
