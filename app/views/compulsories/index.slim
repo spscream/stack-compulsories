@@ -1,4 +1,6 @@
-ul.b-compulsories
+.b-compulsories
+  .b-compulsories-add-compulsory= link_to 'New compulsory', new_compulsory_path
+  ul.b-compulsories-list
   - @compulsories.each do |compulsory|
-    li.b-compulsories-compulsory
+    li.b-compulsories-list-compulsory
       = "#{compulsory.code}: #{compulsory.name}"
