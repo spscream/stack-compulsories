@@ -18,6 +18,7 @@ gem 'carrierwave'
 gem 'remotipart'
 
 gem 'devise'
+gem 'omniauth-facebook'
 
 group :development do
     gem 'better_errors'
