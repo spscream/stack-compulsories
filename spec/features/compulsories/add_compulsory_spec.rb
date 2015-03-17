@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'acceptance_helper'
 
 feature 'Add compulsories', %q{
   In order to add new figures to list

@@ -4,3 +4,4 @@
   - @compulsories.each do |compulsory|
     li.b-compulsories-list-compulsory
       = "#{compulsory.code}: #{compulsory.name}"
+      = link_to 'Destroy', compulsory_path(compulsory), method: :delete
