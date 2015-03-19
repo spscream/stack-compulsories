@@ -13,6 +13,8 @@ hr
             - compulsories.each do |compulsory|
               li.b-compulsories-list-compulsory
                 == "#{link_to compulsory.code, compulsory_path(compulsory)}: #{compulsory.name}"
+                - if compulsory.actual?
+                  span.b-compulsories-list-compulsory-actual-icon
                 =image_tag compulsory.image, class: 'b-compulsories-list-compulsory-image'
                 - if policy(compulsory).edit?
                   ul.b-compulsories-list-compulsory-actions

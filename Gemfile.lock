@@ -114,6 +114,8 @@ GEM
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.8)
+    font-awesome-rails (4.3.0.0)
+      railties (>= 3.2, < 5.0)
     formatador (0.2.5)
     foundation-rails (5.5.1.0)
       railties (>= 3.1.0)
@@ -374,6 +376,7 @@ DEPENDENCIES
   enum_help
   factory_girl_rails
   faker
+  font-awesome-rails
   foundation-rails
   guard-bundler
   guard-rails
