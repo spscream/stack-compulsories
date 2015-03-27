@@ -20,6 +20,7 @@ gem 'remotipart'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'pundit'
+gem 'figaro'
 
 group :development do
     gem 'better_errors'
@@ -52,6 +53,7 @@ group :development, :test do
 end
 group :production do
     gem 'unicorn'
+    gem 'rails_12factor'
 end
 
 group :test do
