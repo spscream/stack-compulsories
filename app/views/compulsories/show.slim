@@ -1,7 +1,7 @@
 .b-compulsory
   .b-compulsory-title= "#{@compulsory.code}: #{@compulsory.name}"
   .b-compulsory-image= image_tag(@compulsory.image)
-  .b-compulsory-description= @compulsory.description
+  .b-compulsory-description= markdown(@compulsory.description)
   - if policy(@compulsory).edit?
     ul.b-compulsory-toolbar
       li.b-compulsory-toolbar-button.mod-destroy
