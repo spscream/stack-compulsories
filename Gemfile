@@ -23,6 +23,7 @@ gem 'remotipart'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'pundit'
+gem 'newrelic_rpm'
 
 group :development do
     gem 'better_errors'
